@@ -1,0 +1,92 @@
+<!--COMPLETED-->
+{{#checkState state 'initial, completed'}}
+  <div class="slider-arrow__left icon-arrow-left" id="toTask"></div>
+  {{#checkState state 'completed'}}
+  <div class="slider-arrow__right icon-arrow-right" id="toReports"></div>
+  {{/checkState}}
+{{/checkState}}
+
+<div class="start ">
+  <section class="timer container">
+    <div class="timer-wrapper container timer-container">
+      <h2 class="timer-wrapper__title title timer--title">
+        {{task.title}}
+      </h2>
+      <p class="timer-wrapper__subtitle">
+        {{task.description}}
+      </p>
+
+      <ul class="complexity complexity--timer">
+        {{#each pomodoros}}
+          <li
+            class="complexity__item {{#conditionalStates this 'failed' }}complexity__item--failed{{/conditionalStates}}
+              {{#conditionalStates this 'completed' }}complexity__item--complete{{/conditionalStates}} ">
+            <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+          </li>
+        {{/each}}
+
+        {{#checkState state 'process, shortBreak, longBreak' }}
+          {{#countPomodoro pomodoros }}
+            <li class="complexity__item">
+              <button class="icon icon--estimation icon-add" id="changeEstimation"></button>
+            </li>
+          {{/countPomodoro }}
+        {{/checkState}}
+      </ul>
+
+      <div class="indication">
+        {{#conditionalStates state 'initial' }}
+          <div class="indication-timer">
+            <span class="indication-timer__title indication-timer__title--start">Let’s do it!</span>
+          </div>
+        {{/conditionalStates}}
+
+        {{#conditionalStates state 'process' }}
+          <div class="indication-timer">
+            <span class="indication-timer__count">{{setting.work.value}}</span>
+            <span class="indication-timer__text">min</span>
+          </div>
+        {{/conditionalStates}}
+
+        <!--VALUES-->
+        {{#checkState state 'shortBreak, longBreak' }}
+          <div class="indication-timer">
+            <span class="indication-timer__title">break</span>
+            <span class="indication-timer__count">
+            {{# checkState state 'shortBreak'}}
+              {{setting.shortBreak.value}}
+            {{/checkState}}
+
+              {{# checkState state 'longBreak'}}
+                {{setting.longBreak.value}}
+              {{/checkState}}
+          </span>
+            <span class="indication-timer__text">min</span>
+          </div>
+        {{/checkState}}
+        {{#checkState state 'completed' }}
+          <div class="indication-timer">
+            <span class="indication-timer__title indication-timer__title--start">You Completed Task</span>
+          </div>
+        {{/checkState}}
+      </div>
+      <!--BUTTONS-->
+      <div class="timer-buttons ">
+        {{#checkState state 'initial'}}
+          <button class="btn btn--green btn--green_big" id="start">Start</button>
+        {{/checkState}}
+
+        {{#checkState state 'process'}}
+          <button class="btn btn--red btn--red_big" id="fail">Fail Pomodora</button>
+          <button class="btn btn--blue" id="finishPomodora">Finish Pomodora</button>
+        {{/checkState}}
+
+        {{#checkState state 'longBreak, shortBreak'}}
+          <button class="btn btn--green" id="startPomodora">Start Pomodora</button>
+          <button class="btn btn--blue" id="finish">Finish Task</button>
+        {{/checkState}}
+      </div>
+    </div>
+  </section>
+</div>
+

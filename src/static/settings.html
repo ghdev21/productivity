@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Timer</title>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-wrapper container "> <!--ADD class scroll -->
+    <div class="logo ">
+      <img class="logo__img" src="/images/Logo.svg" alt="logo">
+    </div>
+    <nav class="main-nav" role="navigation">
+      <ul class="navigation__menu menu primary">
+        <li class="menu__item">
+          <a href="http://localhost:3000/static/task-list.html" class="menu__link">
+            <span class="menu__icon icon-list"></span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="http://localhost:3000/static/reports.html" class="menu__link tooltip" data-hint="Go to Reports">
+            <span class="menu__icon icon-statistics"></span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="http://localhost:3000/static/settings.html" class="menu__link menu__link--active">
+            <span class="menu__icon icon-settings"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+  <section class="settings">
+    <div class="settings-wrapper container">
+      <h2 class="settings-wrapper__title title title--main">
+        Timer
+      </h2>
+
+      <div class="pomodoros pomodoros--wrapper  ">
+        <h3 class="pomodoros__title title title--subtitle">
+          Pomodoros settings
+        </h3>
+
+        <div class="pomodoros--wrapper__item settings-group ">
+          <ul class="settings-group__list tab-list">
+            <li class="tab-list__item tab-list__item--active">Pomodoros</li>
+            <li class="tab-list__item">Categories</li>
+          </ul>
+
+          <form action="#" method="post" class="settings-group__form pomodoros-form pomodoros-form--active" id="settings">
+            <div class="pomodoros-form__group">
+              <!--<span class="pomodoros-form__category pomodoros-work"></span>-->
+              <span class="pomodoros-form__text pomodoros-form__text--work">work time</span>
+              <label class="pomodoros-form__label controls" for="time" data-category="work">
+                <button class="controls__minus icon-minus"></button>
+                <input class="controls__input" type="number" id="time" name="work" min="15" max="25" value="25" disabled>
+                <button class="controls__plus icon-add"></button>
+              </label>
+              <p class="pomodoros-form__desc">
+                Please select a value between 15 and 25 <span class="pomodoros-form__desc--white">minutes</span>
+              </p>
+            </div>
+
+            <div class="pomodoros-form__group">
+              <!--<span class="pomodoros-form__category pomodoros-form__text&#45;&#45;iteration"></span>-->
+              <span class="pomodoros-form__text pomodoros-form__text--iteration">Work Iteration</span>
+              <label class="pomodoros-form__label controls" for="iteration" data-category="iteration">
+                <button class="controls__minus icon-minus"></button>
+                <input class="controls__input" type="number" id="iteration" name="iteration" min="2" max="5"
+                       value="5" disabled>
+                <button class="controls__plus icon-add"></button>
+              </label>
+              <p class="pomodoros-form__desc">
+                Please select a value between 2 and 5 <span class="pomodoros-form__desc--white">iteration</span>
+              </p>
+            </div>
+
+            <div class="pomodoros-form__group">
+              <!--<span class="pomodoros-form__category pomodoros-break pomodoros-break&#45;&#45;short"></span>-->
+              <span class="pomodoros-form__text pomodoros-form__text--break_short">Short Break</span>
+              <label class="pomodoros-form__label controls" for="short-break" data-category="shortBreak">
+                <button class="controls__minus icon-minus"></button>
+                <input class="controls__input" type="number" id="short-break" name="short-break" min="3" max="5"
+                       value="5" disabled>
+                <button class="controls__plus icon-add"></button>
+              </label>
+              <p class="pomodoros-form__desc">
+                Please select a value between 3 and 5 <span class="pomodoros-form__desc--white">minutes</span>
+              </p>
+            </div>
+
+            <div class="pomodoros-form__group">
+              <!--<span class="pomodoros-form__category pomodoros-break pomodoros-break&#45;&#45;long"></span>-->
+              <span class="pomodoros-form__text pomodoros-form__text--break_long">Long Break</span>
+              <label class="pomodoros-form__label controls" for="long-break" data-category="longBreak">
+                <button class="controls__minus icon-minus"></button>
+                <input class="controls__input" type="number" id="long-break" name="long-break" min="15" max="30"
+                       value="30" disabled>
+                <button class="controls__plus icon-add"></button>
+              </label>
+              <p class="pomodoros-form__desc">
+                Please select a value between 15 and 30 <span class="pomodoros-form__desc--white">minutes</span>
+              </p>
+            </div>
+
+            <div class="pomodoros-form__cycle cycle">
+              <h3 class="cycle__title">
+                Your cycle
+              </h3>
+              <div class="cycle__graph graph">
+
+              </div>
+            </div>
+
+
+            <div class="pomodoros-form__buttons">
+              <button class="btn btn--blue">Go to Tasks</button>
+              <button class="btn btn--green btn--green_big">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="pomodoros pomodoros--wrapper none ">
+        <h3 class="pomodoros__title title title--subtitle">
+          Categories list overview
+        </h3>
+
+        <div class="pomodoros--wrapper__item settings-group">
+          <ul class="settings-group__list tab-list">
+            <li class="tab-list__item">Pomodoros</li>
+            <li class="tab-list__item tab-list__item--active">Categories</li>
+          </ul>
+
+          <ul class="categories-list">
+            <li class="categories-list__item  ">
+              <span class="categories-list__category categories-list__category--work"></span>
+              <span class="categories-list__text">Work</span>
+            </li>
+            <li class="categories-list__item">
+              <span class="categories-list__category categories-list__category--education"></span>
+              <span class="categories-list__text">Education</span>
+            </li>
+            <li class="categories-list__item">
+              <span class="categories-list__category categories-list__category--hobby"></span>
+              <span class="categories-list__text">Hobby</span>
+            </li>
+            <li class="categories-list__item">
+              <span class="categories-list__category categories-list__category--sport"></span>
+              <span class="categories-list__text">Sport</span>
+            </li>
+            <li class="categories-list__item">
+              <span class="categories-list__category categories-list__category--other"></span>
+              <span class="categories-list__text">Other</span>
+            </li>
+          </ul>
+
+          <div class="button-wrapper">
+            <button class="btn btn--tasks btn--blue btn--blue_small">Go to Tasks</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/bundle.js"></script>
+</body>
+
+</html>

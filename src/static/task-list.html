@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Task list</title>
+</head>
+
+<body>
+<header class="header">  <!--ADD class scroll-->
+
+  <div class="header-wrapper container  "> <!-- after adding class scroll  uncomment logo -->
+    <div class="logo ">
+      <img class="logo__img" src="/images/Logo.svg" alt="logo">
+    </div>
+    <nav class="main-nav" role="navigation">
+      <ul class="navigation__menu menu primary">
+        <!--UNCOMENT TO SEE PLUS-->
+        <!--<li class="menu__item ">-->
+        <!--<a href="#" class="menu__link "><span class="menu__icon icon-add"></span></a>-->
+        <!--</li>-->
+        <li class="menu__item ">
+          <a href="#" class="menu__link basket">
+            <span class="menu__icon icon-trash"></span>
+          </a>
+          <!--ADD CLASS basket TO THE LINK -->
+        </li>
+        <li class="menu__item">
+          <a href="http://localhost:3000/static/task-list.html" class="menu__link menu__link--active tooltip " data-hint="Go to Reports">
+            <span class="menu__icon icon-list"></span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="http://localhost:3000/static/reports.html" class="menu__link tooltip" data-hint="Go to Reports">
+            <span class="menu__icon icon-statistics"></span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="http://localhost:3000/static/settings.html" class="menu__link">
+            <span class="menu__icon icon-settings"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="main">
+    <section class="tasks container">
+      <h2 class="tasks__title title title--main">Daily Task List <span class="tasks__title--icon icon-add"></span></h2>
+
+      <!--FIRST VISIT-->
+      <div class="task-first none ">
+        <div class="task-first__icon">
+          <img src="/images/tomato_settings.svg" alt="Add task" class="tasks-first__img">
+        </div>
+        <div class="task-first__wrapper messages">
+          <p class="messages__text--added">
+            As you visited our site for a first time you can check <br>
+            and customize your default application settings
+          </p>
+        </div>
+        <div class="buttons">
+          <button class="btn btn--blue btn--big ">Skip</button>
+          <button class="btn btn--green btn--small">Go to Timer</button>
+        </div>
+      </div>
+      <!--TASK EMPTY -->
+      <div class="task-first ">
+        <ul class="tab-list tab-tasks">
+          <li class="tab-list__item tab-list__item--active">To Do</li>
+          <li class="tab-list__item">Done</li>
+        </ul>
+        <div class="task-first__icon task-first__icon--greet">
+          <img src="/images/tomato-addv02.svg" alt="Add task" class="tasks-first__img">
+        </div>
+        <div class="task-first__wrapper messages">
+          <p class="messages__text--added">
+            You don’t have any tasks left. <br>
+            Add new tasks to stay productive.
+          </p>
+        </div>
+      </div>
+      <!--AddED FIRST TASK -->
+      <div class="task-first none ">
+        <div class="task-first__icon">
+          <img src="/images/tomato-add.svg" alt="Add task" class="tasks-first__img">
+        </div>
+        <div class="task-first__wrapper messages">
+          <p class="messages__text--added">
+            Add your first task
+          </p>
+        </div>
+      </div>
+      <!--FIRST TASK CREATED-->
+      <div class="tasks-first none ">
+        <ul class="tab-list tab-tasks">
+          <li class="tab-list__item tab-list__item--active">To Do</li>
+          <li class="tab-list__item">Done</li>
+        </ul>
+
+        <div class="task-first">
+          <!--SHOW MESSAGE ADD TASK-->
+          <div class="task-first__wrapper messages">
+            <p class="messages__text">
+              Task added, <br>
+              drag it to the top 5 in daily task list
+            </p>
+            <span class="messages__icon icon-arrow_circle"></span>
+          </div>
+
+          <!--SHOW MESSAGE TASK HAS BEEN ADDED-->
+          <div class="task-first__wrapper messages none ">
+            <p class="messages__text--added">
+              Excellent,<br>
+              all daily tasks done! :)
+            </p>
+          </div>
+        </div>
+
+
+        <div class="global global--work">
+          <h3 class="global__title">Work</h3>
+          <ul class="task-list ">
+            <li class="task-list__item task-list__item--delete task-list__item--work task-list__item--priority_hight">
+              <button
+                class="task-list__delete task-list__delete--work icon-trash"></button>
+              <div class="task-list__text">
+                <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+                <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor
+                  incididunt ut labore
+                </p>
+              </div>
+              <div class="task-list__icons">
+                <button class="task-list__up icon-arrows-up"></button>
+                <button class="task-list__edit icon-edit">
+                  <span class="tooltip"></span>
+                </button>
+              </div>
+              <a class="task-list__priority">
+                <span class="task-list__estimation">3</span>
+                <span class="tooltip"></span>
+              </a>
+            </li>
+
+            <li class="task-list__item task-list__item--delete task-list__item--work task-list__item--priority_middle">
+              <button
+                class="task-list__delete task-list__delete--work icon-trash"></button>
+              <div class="task-list__text">
+                <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+                <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor
+                  incididunt ut labore
+                </p>
+              </div>
+              <div class="task-list__icons">
+                <button class="task-list__up icon-arrows-up"></button>
+                <button class="task-list__edit icon-edit">
+                  <span class="tooltip"></span>
+                </button>
+              </div>
+              <a class="task-list__priority">
+                <span class="task-list__estimation">3</span>
+                <span class="tooltip"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--///DELETE MODE-->
+      <div class="tasks none ">
+        <div class="tabs">
+          <ul class="tab-tasks">
+            <li class="tab-list__item">Select All</li>
+            <li class="tab-list__item">Deselect All</li>
+          </ul>
+
+          <ul class="tab-list tab-tasks">
+            <li class="tab-list__item tab-list__item--active">To Do</li>
+            <li class="tab-list__item">Done</li>
+          </ul>
+        </div>
+
+        <!--DELETED TASKS-->
+        <ul class="task-list ">
+          <li class="task-list__item task-list__item--delete task-list__item--sport task-list__item--priority_hight">
+            <button
+              class="task-list__delete task-list__delete--sport task-list__delete--sport_active icon-trash"></button>
+            <div class="task-list__text">
+              <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+              <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore
+              </p>
+            </div>
+            <div class="task-list__icons tooltip" data-hint="Go to Global List">
+              <button class="task-list__edit icon-edit"></button>
+            </div>
+            <a class="task-list__priority">
+              <span class="task-list__estimation">3</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="view-settings">
+          <button class="tasks__link">Global List
+            <!--add class icon-global-list-arrow-right to change direction-->
+            <span class="tasks__link--arrow  icon-global-list-arrow-down"></span>
+            <span class="tooltip"></span>
+          </button>
+
+          <ul class="tab-list tab-tasks">
+            <li class="tab-list__item tab-list__item--active">All</li>
+            <li class="tab-list__item">Urgent</li>
+            <li class="tab-list__item">Hight</li>
+            <li class="tab-list__item">Middle</li>
+            <li class="tab-list__item">Low</li>
+          </ul>
+
+        </div>
+
+        <!--DELETE WORK WORK-->
+        <div class="global global--work">
+          <h3 class="global__title">Work</h3>
+          <ul class="task-list ">
+            <li class="task-list__item task-list__item--delete task-list__item--work task-list__item--priority_hight">
+              <button
+                class="task-list__delete task-list__delete--work icon-trash"></button>
+              <div class="task-list__text">
+                <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+                <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor
+                  incididunt ut labore
+                </p>
+              </div>
+              <div class="task-list__icons">
+                <button class="task-list__up icon-arrows-up"></button>
+                <button class="task-list__edit icon-edit">
+                  <span class="tooltip"></span>
+                </button>
+              </div>
+              <a class="task-list__priority">
+                <span class="task-list__estimation">3</span>
+                <span class="tooltip"></span>
+              </a>
+            </li>
+
+            <li class="task-list__item task-list__item--delete task-list__item--work task-list__item--priority_middle">
+              <button
+                class="task-list__delete task-list__delete--work icon-trash"></button>
+              <div class="task-list__text">
+                <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+                <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor
+                  incididunt ut labore
+                </p>
+              </div>
+              <div class="task-list__icons">
+                <button class="task-list__up icon-arrows-up"></button>
+                <button class="task-list__edit icon-edit">
+                  <span class="tooltip"></span>
+                </button>
+              </div>
+              <a class="task-list__priority">
+                <span class="task-list__estimation">3</span>
+                <span class="tooltip"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!--DELETE STATE EDUCATION-->
+        <div class="global global--education">
+          <h3 class="global__title">Work</h3>
+          <ul class="task-list ">
+            <li class="task-list__item task-list__item--delete task-list__item--work task-list__item--priority_low">
+              <button
+                class="task-list__delete task-list__delete--education icon-trash"></button>
+              <div class="task-list__text">
+                <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+                <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor
+                  incididunt ut labore
+                </p>
+              </div>
+              <div class="task-list__icons">
+                <button class="task-list__up icon-arrows-up"></button>
+                <button class="task-list__edit icon-edit">
+                  <span class="tooltip"></span>
+                </button>
+              </div>
+              <a class="task-list__priority">
+                <span class="task-list__estimation">3</span>
+                <span class="tooltip"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--ALl STATES WITH NOTIFICATION MESSAGES-->
+      <div class="tasks none ">
+        <ul class="tab-list tab-tasks">
+          <li class="tab-list__item tab-list__item--active">To Do</li>
+          <li class="tab-list__item">Done</li>
+        </ul>
+
+        <ul class="task-list ">
+          <li class="task-list__item task-list__item--delete task-list__item--hobby task-list__item--priority_urgent">
+            <button
+              class="task-list__delete task-list__delete--hobby icon-trash"></button>
+            <div class="task-list__text">
+              <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+              <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore
+              </p>
+            </div>
+            <div class="task-list__icons tooltip" data-hint="Go to Global List">
+              <button class="task-list__edit icon-edit"></button>
+            </div>
+            <a class="task-list__priority">
+              <span class="task-list__estimation">3</span>
+              <span class="tooltip"></span>
+            </a>
+          </li>
+
+          <li class="task-list__item task-list__item--delete task-list__item--sport task-list__item--priority_hight">
+            <button
+              class="task-list__delete task-list__delete--sport task-list__delete--sport_active icon-trash"></button>
+            <div class="task-list__text">
+              <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+              <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore
+              </p>
+            </div>
+            <div class="task-list__icons tooltip" data-hint="Go to Global List">
+              <button class="task-list__edit icon-edit"></button>
+            </div>
+            <a class="task-list__priority">
+              <span class="task-list__estimation">3</span>
+            </a>
+          </li>
+
+          <li class="task-list__item task-list__item--done task-list__item--education task-list__item--priority_low">
+            <span class="task-list__prescription date">
+              <span class="date__month">today</span>
+            </span>
+            <div class="task-list__text">
+              <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+              <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore
+              </p>
+            </div>
+            <div class="task-list__icons"></div>
+            <a class="task-list__priority">
+              <span class="task-list__estimation">3</span>
+              <span class="tooltip"></span>
+            </a>
+          </li>
+
+          <li class="task-list__item task-list__item--other task-list__item--priority_middle">
+            <span class="task-list__prescription date">
+              <span class="date__day">23</span>
+              <span class="date__month">May</span>
+            </span>
+            <div class="task-list__text">
+              <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+              <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore
+              </p>
+            </div>
+            <div class="task-list__icons tooltip" data-hint="Go to Global List">
+              <button class="task-list__edit icon-edit"></button>
+            </div>
+            <a class="task-list__priority">
+              <span class="task-list__estimation">3</span>
+              <span class="tooltip"></span>
+            </a>
+          </li>
+        </ul>
+        <!--NOTIFICATION MESSAGES-->
+        <div class="notification-wrapper none">
+          <!--SUCCESSES MESSAGE-->
+          <div class="notification notification--successes ">
+            <div class="notification__status icon-tomato-success"></div>
+            <p class="notification__text">Task was successfully created!</p>
+            <button class="notification__button icon-close"></button>
+          </div>
+          <!--INFO MESSAGE-->
+          <div class="notification notification--info ">
+            <div class="notification__status icon-tomato-info"></div>
+            <p class="notification__text">This is just an info notification message!</p>
+            <button class="notification__button icon-close"></button>
+          </div>
+          <!--WARNING MESSAGE-->
+          <div class="notification notification--warning ">
+            <div class="notification__status icon-tomato-error"></div>
+            <p class="notification__text">This is just a warning notification message!</p>
+            <button class="notification__button icon-close"></button>
+          </div>
+          <!--ERROR MESSAGE-->
+          <div class="notification notification--error ">
+            <div class="notification__status icon-tomato-error"></div>
+            <p class="notification__text">Ups! An error has occured! </p>
+            <button class="notification__button icon-close"></button>
+          </div>
+        </div>
+
+      </div>
+      <!--GLOBAL-->
+      <div class="global-block none ">
+        <div class="view-settings">
+          <button class="tasks__link">Global List
+            <!--add class icon-global-list-arrow-right to change direction-->
+            <span class="tasks__link--arrow  icon-global-list-arrow-down"></span>
+            <span class="tooltip"></span>
+          </button>
+
+          <ul class="tab-list tab-tasks">
+            <li class="tab-list__item tab-list__item--active">All</li>
+            <li class="tab-list__item">Urgent</li>
+            <li class="tab-list__item">Hight</li>
+            <li class="tab-list__item">Middle</li>
+            <li class="tab-list__item">Low</li>
+          </ul>
+        </div>
+
+        <!--WORK-->
+        <div class="global global--work">
+          <h3 class="global__title">Work</h3>
+          <ul class="task-list ">
+            <li class="task-list__item task-list__item--work task-list__item--priority_hight">
+            <span class="task-list__prescription date">
+              <span class="date__day">23</span>
+              <span class="date__month">May</span>
+            </span>
+              <div class="task-list__text">
+                <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+                <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor
+                  incididunt ut labore
+                </p>
+              </div>
+              <div class="task-list__icons">
+                <button class="task-list__up icon-arrows-up"></button>
+                <button class="task-list__edit icon-edit">
+                  <span class="tooltip"></span>
+                </button>
+              </div>
+              <a class="task-list__priority">
+                <span class="task-list__estimation">3</span>
+                <span class="tooltip"></span>
+              </a>
+            </li>
+
+            <li class="task-list__item task-list__item--work task-list__item--priority_middle">
+            <span class="task-list__prescription date">
+              <span class="date__day">23</span>
+              <span class="date__month">May</span>
+            </span>
+              <div class="task-list__text">
+                <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+                <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor
+                  incididunt ut labore
+                </p>
+              </div>
+              <div class="task-list__icons">
+                <button class="task-list__up icon-arrows-up"></button>
+                <button class="task-list__edit icon-edit">
+                  <span class="tooltip"></span>
+                </button>
+              </div>
+              <a class="task-list__priority">
+                <span class="task-list__estimation">3</span>
+                <span class="tooltip"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!--EDUCATION-->
+        <div class="global global--education">
+          <h3 class="global__title">Education</h3>
+          <ul class="task-list ">
+            <li class="task-list__item task-list__item--work task-list__item--priority_low">
+            <span class="task-list__prescription date">
+              <span class="date__day">23</span>
+              <span class="date__month">May</span>
+            </span>
+              <div class="task-list__text">
+                <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+                <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor
+                  incididunt ut labore
+                </p>
+              </div>
+              <div class="task-list__icons">
+                <button class="task-list__up icon-arrows-up"></button>
+                <button class="task-list__edit icon-edit">
+                  <span class="tooltip"></span>
+                </button>
+              </div>
+              <a class="task-list__priority">
+                <span class="task-list__estimation">3</span>
+                <span class="tooltip"></span>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <!--OVERDUE-->
+      <div class="global-block none">
+        <div class="view-settings">
+          <ul class="tab-list tab-tasks">
+            <li class="tab-list__item tab-list__item--active">All</li>
+            <li class="tab-list__item">Urgent</li>
+            <li class="tab-list__item">Hight</li>
+            <li class="tab-list__item">Middle</li>
+            <li class="tab-list__item">Low</li>
+          </ul>
+        </div>
+
+        <!--WORK-->
+        <div class="global global--work">
+          <h3 class="global__title">Work</h3>
+          <ul class="task-list ">
+            <li class="task-list__item task-list__item--work task-list__item--priority_hight">
+            <span class="task-list__prescription task-list__prescription--overdue">
+              <span class="date__day">23</span>
+              <span class="date__month">May</span>
+            </span>
+              <div class="task-list__text">
+                <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+                <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor
+                  incididunt ut labore
+                </p>
+              </div>
+              <div class="task-list__icons">
+                <button class="task-list__up icon-arrows-up"></button>
+                <button class="task-list__edit icon-edit">
+                  <span class="tooltip"></span>
+                </button>
+              </div>
+              <a class="task-list__priority">
+                <span class="task-list__estimation">3</span>
+                <span class="tooltip"></span>
+              </a>
+            </li>
+
+            <li class="task-list__item task-list__item--work task-list__item--priority_middle">
+            <span class="task-list__prescription task-list__prescription--overdue">
+              <span class="date__day">23</span>
+              <span class="date__month">May</span>
+            </span>
+              <div class="task-list__text">
+                <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+                <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor
+                  incididunt ut labore
+                </p>
+              </div>
+              <div class="task-list__icons">
+                <button class="task-list__up icon-arrows-up"></button>
+                <button class="task-list__edit icon-edit">
+                  <span class="tooltip"></span>
+                </button>
+              </div>
+              <a class="task-list__priority">
+                <span class="task-list__estimation">3</span>
+                <span class="tooltip"></span>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+        <!--EDUCATION-->
+        <div class="global global--education">
+          <h3 class="global__title">Work</h3>
+          <ul class="task-list ">
+            <li class="task-list__item task-list__item--work task-list__item--priority_low">
+            <span class="task-list__prescription task-list__prescription--overdue">
+              <span class="date__day">23</span>
+              <span class="date__month">May</span>
+            </span>
+              <div class="task-list__text">
+                <h3 class="task-list__title">Lorem ipsum sit amet</h3>
+                <p class="task-list__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor
+                  incididunt ut labore
+                </p>
+              </div>
+              <div class="task-list__icons">
+                <button class="task-list__up icon-arrows-up"></button>
+                <button class="task-list__edit icon-edit">
+                  <span class="tooltip"></span>
+                </button>
+              </div>
+              <a class="task-list__priority">
+                <span class="task-list__estimation">3</span>
+                <span class="tooltip"></span>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <!--MODAL EDIT-->
+      <div class="modal-overlay none  ">
+        <div class="modal">
+          <div class="modal__buttons button-control">
+            <button class="button-control__icon button-control__icon--trash icon-trash"></button>
+            <button class="button-control__icon button-control__icon--close icon-close"></button>
+            <button class="button-control__icon button-control__icon--check icon-check"></button>
+          </div>
+          <h2 class="modal__title">Edit Task</h2>
+          <!--<p class="modal__question">Are you sure you want to remove selected task(s)?</p>-->
+          <form class="edit-task" action="#" method="post">
+            <div class="edit-task__group">
+              <label class="edit-task__label">Title
+                <input class="edit-task__input" type="text" name="title" placeholder="Add title here">
+              </label>
+            </div>
+            <div class="edit-task__group">
+              <label class="edit-task__label">Description
+                <input class="edit-task__input" type="text" name="description" placeholder="Add description here">
+              </label>
+            </div>
+
+            <div class="edit-task__group group">
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="work" name="radio-group" checked>
+                <label class="group-category__label group-category__label--work" for="work">Work</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="education" name="radio-group">
+                <label class="group-category__label group-category__label--education" for="education">Education</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="hobby" name="radio-group" >
+                <label class="group-category__label group-category__label--hobby" for="hobby">Hobby</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="sport" name="radio-group">
+                <label class="group-category__label group-category__label--sport" for="sport">Sport</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="other" name="radio-group" >
+                <label class="group-category__label group-category__label--other" for="other">Other</label>
+              </div>
+            </div>
+            <div class="edit-task__group">
+              <label class="edit-task__label">DEADLINE
+                <input class="edit-task__input" type="text" name="date" placeholder="May 23, 2016">
+              </label>
+            </div>
+
+            <div class="edit-task__group">
+              <span class="edit-task__label">ESTIMATION</span>
+              <ul class="complexity">
+                <li class="complexity__item complexity__item complexity__item--done_active">
+                  <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+                </li>
+                <li class="complexity__item complexity__item--done ">
+                  <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+                </li>
+                <li class="complexity__item complexity__item--done ">
+                  <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+                </li>
+                <li class="complexity__item complexity__item--done ">
+                  <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+                </li>
+                <li class="complexity__item complexity__item--done ">
+                  <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+                </li>
+              </ul>
+            </div>
+
+            <div class="edit-task__group group">
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="urgent" name="category" checked>
+                <label class="group-category__label group-category__label--urgent" for="urgent">Urgent</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="hight" name="category">
+                <label class="group-category__label group-category__label--hight" for="hight">High</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="middle" name="category">
+                <label class="group-category__label group-category__label--middle" for="middle">Middle</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="low" name="category">
+                <label class="group-category__label group-category__label--low" for="low">Low</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--MODAL ADD-->
+      <div class="modal-overlay none">
+        <div class="modal">
+          <div class="modal__buttons button-control">
+            <button class="button-control__icon button-control__icon--close icon-close"></button>
+            <button class="button-control__icon button-control__icon--check icon-check"></button>
+          </div>
+          <h2 class="modal__title">Add Task</h2>
+          <!--<p class="modal__question">Are you sure you want to remove selected task(s)?</p>-->
+          <form class="edit-task" action="#" method="post">
+            <div class="edit-task__group">
+              <label class="edit-task__label">Title
+                <input class="edit-task__input" type="text" name="title" placeholder="Add title here">
+              </label>
+            </div>
+            <div class="edit-task__group">
+              <label class="edit-task__label">Description
+                <input class="edit-task__input" type="text" name="description" placeholder="Add description here">
+              </label>
+            </div>
+
+            <div class="edit-task__group group">
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="work-add" name="radio-group" checked>
+                <label class="group-category__label group-category__label--work" for="work-add">Work</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="education-add" name="radio-group">
+                <label class="group-category__label group-category__label--education" for="education-add">Education</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="hobby-add" name="radio-group" >
+                <label class="group-category__label group-category__label--hobby" for="hobby-add">Hobby</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="sport-add" name="radio-group">
+                <label class="group-category__label group-category__label--sport" for="sport-add">Sport</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="other-add" name="radio-group" >
+                <label class="group-category__label group-category__label--other" for="other-add">Other</label>
+              </div>
+            </div>
+            <div class="edit-task__group">
+              <label class="edit-task__label">DEADLINE
+                <input class="edit-task__input" type="text" name="date" placeholder="May 23, 2016">
+              </label>
+            </div>
+
+            <div class="edit-task__group">
+              <span class="edit-task__label">ESTIMATION</span>
+              <ul class="complexity">
+                <li class="complexity__item complexity__item complexity__item--done_active">
+                  <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+                </li>
+                <li class="complexity__item complexity__item--done ">
+                  <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+                </li>
+                <li class="complexity__item complexity__item--done ">
+                  <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+                </li>
+                <li class="complexity__item complexity__item--done ">
+                  <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+                </li>
+                <li class="complexity__item complexity__item--done ">
+                  <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+                </li>
+              </ul>
+            </div>
+
+            <div class="edit-task__group group">
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="urgent-add" name="category" checked>
+                <label class="group-category__label group-category__label--urgent" for="urgent-add">Urgent</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="hight-add" name="category">
+                <label class="group-category__label group-category__label--hight" for="hight-add">High</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="middle-add" name="category">
+                <label class="group-category__label group-category__label--middle" for="middle-add">Middle</label>
+              </div>
+              <div class="group-category">
+                <input class="group-category__input" type="radio" id="low-add" name="category">
+                <label class="group-category__label group-category__label--low" for="low-add">Low</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--MODAL DELETE-->
+      <div class="modal-overlay none ">
+        <div class="modal">
+          <div class="modal__buttons button-control">
+            <button class="button-control__icon button-control__icon--close icon-close"></button>
+          </div>
+          <h2 class="modal__title">Remove Task</h2>
+          <p class="modal__question">Are you sure you want to remove selected task(s)?</p>
+          <div class="buttons">
+            <button class="btn btn--blue">Cancel</button>
+            <button class="btn btn--red">Remove</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  <footer class="footer"></footer>
+
+<script src="/bundle.js"></script>
+</body>
+
+</html>

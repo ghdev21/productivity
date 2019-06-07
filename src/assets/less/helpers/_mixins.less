@@ -1,0 +1,186 @@
+.opacity (@opacity: 0.5) {
+  -webkit-opacity: @opacity;
+  -moz-opacity: @opacity;
+  opacity: @opacity;
+}
+
+.transform (@value) {
+  -webkit-transform: translateX(@value);
+  -moz-transform: translateX(@value);
+  -ms-transform: translateX(@value);
+  -o-transform: translateX(@value);
+  transform: translateX(@value);
+}
+
+.set-font(@family: "Roboto", @weight: 400, @size: 1rem, @color: @white) {
+  font-family: @family, sans-serif;
+  font-weight: @weight;
+  font-size: @size;
+  color: @color;
+}
+
+.hide-arrows() {
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.set-state() {
+  &--active,
+  &:active {
+    color: @white;
+  }
+  &_focus,
+  &:focus,
+  &:hover {
+    color: @spray;
+  }
+}
+
+.set-color(@color: inherit, @background-color:inherit) {
+  color: @color;
+  background-color: @background-color;
+}
+
+
+.category-circle(@category) {
+  &--@{category} {
+    background-color: e("@{@{category}}");
+  }
+}
+
+.category-border(@category) {
+  &--@{category} {
+    border-left: 9px solid e("@{@{category}}");
+  }
+}
+
+.priority(@category) {
+  &_@{category} .task-list__priority {
+    background-color: e("@{@{category}}");
+  }
+  &_@{category} .task-list__title {
+    color: e("@{@{category}}");
+  }
+}
+
+.set-background(@category, @darken) {
+  &--@{category} {
+    background-color: e("@{@{category}}");
+
+    &_active,
+    &:active,
+    &:hover {
+      background-color: @darken;
+
+      &::before {
+        content: "\e906";
+      }
+    }
+  }
+}
+
+.tooltip(@y: 38px; @x: -15px) {
+  .tooltip {
+    position: relative;
+
+    &:hover {
+      &::before,
+      &::after {
+        visibility: visible;
+      }
+    }
+
+    &::before {
+      visibility: hidden;
+      position: absolute;
+      width: max-content;
+      content: attr(data-hint);
+      z-index: 1;
+      top: @y;
+      left: @x;
+      .set-font(Roboto, bold, 12px, @tip-text);
+      background-color: rgba(219, 234, 245, .9);
+      padding: 10px 15px 12px;
+      display: inline-block;
+    }
+
+    &::after {
+      visibility: hidden;
+      position: absolute;
+      content: "";
+      top: @y - 10px;
+      left: @x + 14px;
+      border: 5px solid transparent;
+      border-bottom: 5px solid rgba(219, 234, 245, .9);
+    }
+  }
+}
+
+.global-category(@color) {
+  &::before {
+    position: absolute;
+    content: "";
+    top: 7px;
+    left: 2px;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: @color;
+    box-shadow: 0 0 0 4px #2a3f50, 0 0 0 9px @color;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    top: 18px;
+    bottom: 0;
+    left: 0;
+    border-left: 9px solid @color;
+  }
+}
+
+.global-category-radio(@category) {
+  &--@{category}:after {
+    background-color: e("@{@{category}}");
+    box-shadow: 0 0 0 3px #2a3f50, 0 0 0 7px e("@{@{category}}");
+  }
+}
+
+.color-radio(@category) {
+  &--@{category}:hover::before {
+    background-color: e("@{@{category}}");
+  }
+}
+
+.color-statistic(@category) {
+  &--@{category}::before {
+    background-color: e("@{@{category}}");
+  }
+}
+
+.placeholder(@color) {
+  ::-webkit-input-placeholder {
+    color: @color;
+  }
+  ::-moz-placeholder {
+    color: @color;
+  }
+  /* Firefox 19+ */
+  :-moz-placeholder {
+    color: @color;
+  }
+  /* Firefox 18- */
+  :-ms-input-placeholder {
+    color: @color;
+  }
+}
+
+.responsive(@maxWidth,  @content, @orientation: portrait) {
+  @media only screen and (max-width: @maxWidth) and (orientation: portrait) {
+    @content()
+  }
+}

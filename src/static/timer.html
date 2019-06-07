@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Reports</title>
+</head>
+
+<body>
+<div class="slider-arrow">
+  <a class="slider-arrow__left icon-arrow-left"></a>
+  <a class="slider-arrow__right icon-arrow-right"></a>
+
+  <header class="header">
+    <div class="header-wrapper container"> <!--ADD class scroll -->
+      <div class="logo ">
+        <img class="logo__img" src="/images/Logo.svg" alt="logo">
+      </div>
+      <nav class="main-nav" role="navigation">
+        <ul class="navigation__menu menu primary">
+          <li class="menu__item">
+            <a href="http://localhost:3000/static/task-list.html" class="menu__link">
+              <span class="menu__icon icon-list"></span>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="http://localhost:3000/static/reports.html" class="menu__link tooltip"
+               data-hint="Go to Reports">
+              <span class="menu__icon icon-statistics"></span>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="http://localhost:3000/static/settings.html" class="menu__link">
+              <span class="menu__icon icon-settings"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <!--COMPLETED-->
+    <div class="completed">
+      <section class="timer container">
+        <div class="timer-wrapper container">
+          <h2 class="timer-wrapper__title title title--main">
+            1.Create a New Design
+          </h2>
+          <p class="timer-wrapper__subtitle">
+            Lorem ipsum dolor sit amet consectetur adipiscing
+          </p>
+          <ul class="complexity complexity--timer">
+            <li class="complexity__item complexity__item complexity__item--done_active">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+            <li class="complexity__item complexity__item--done complexity__item--done_active">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+            <li class="complexity__item complexity__item--done complexity__item--done_active">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+          </ul>
+          <!--START-->
+          <div class="indication indication--done ">
+              <div class="indication-timer">
+                <span class="indication-timer__title indication-timer__title--start">You Completed Task</span>
+              </div>
+          </div>
+        </div>
+        <div class="timer-buttons ">
+          <button class="btn btn--green btn--green_big">Start</button>
+        </div>
+      </section>
+    </div>
+    <!--BREAK-->
+    <div class="break none ">
+      <section class="timer container">
+        <div class="timer-wrapper container">
+          <h2 class="timer-wrapper__title title title--main">
+            1.Create a New Design
+          </h2>
+          <p class="timer-wrapper__subtitle">
+            Lorem ipsum dolor sit amet consectetur adipiscing
+          </p>
+          <ul class="complexity complexity--timer">
+            <li class="complexity__item complexity__item complexity__item--done_active">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+            <li class="complexity__item complexity__item--done">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+            <li class="complexity__item complexity__item--done">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+          </ul>
+          <!--START-->
+          <div class="indication ">
+            <div class="indication-timer">
+              <span class="indication-timer__text">Break is over</span>
+            </div>
+          </div>
+        </div>
+        <div class="timer-buttons ">
+          <button class="btn btn--green">Start Pomodora</button>
+          <button class="btn btn--blue">Finish Task</button>
+        </div>
+      </section>
+    </div>
+    <!--PAUSE-->
+    <div class="break break--paused none ">
+      <section class="timer container">
+        <div class="timer-wrapper container">
+          <h2 class="timer-wrapper__title title title--main">
+            1.Create a New Design
+          </h2>
+          <p class="timer-wrapper__subtitle">
+            Lorem ipsum dolor sit amet consectetur adipiscing
+          </p>
+          <ul class="complexity complexity--timer complexity--add">
+            <li class="complexity__item complexity__item--done">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+            <li class="complexity__item complexity__item--done">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+            <li class="complexity__item complexity__item--done complexity__item--last ">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+          </ul>
+          <!--START-->
+          <div class="indication ">
+            <div class="indication-timer">
+              <span class="indication-timer__count">6</span>
+              <span class="indication-timer__text">min</span>
+            </div>
+          </div>
+        </div>
+        <div class="timer-buttons ">
+          <button class="btn btn--red btn--red_big ">Fail Pomodora</button>
+          <button class="btn btn--blue">Finish Task</button>
+        </div>
+      </section>
+    </div>
+    <!--BREAK FAILED-->
+    <div class="break break-failed none ">
+      <section class="timer container">
+        <div class="timer-wrapper container">
+          <h2 class="timer-wrapper__title title title--main">
+            1.Create a New Design
+          </h2>
+          <p class="timer-wrapper__subtitle">
+            Lorem ipsum dolor sit amet consectetur adipiscing
+          </p>
+          <ul class="complexity complexity--timer">
+            <li class="complexity__item complexity__item complexity__item--canceled complexity__item--canceled_active">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+            <li class="complexity__item complexity__item--done">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+            <li class="complexity__item complexity__item--done">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+          </ul>
+
+          <div class="indication">
+            <div class="indication-timer">
+              <span class="indication-timer__title">break</span>
+              <span class="indication-timer__count">3</span>
+              <span class="indication-timer__text">min</span>
+            </div>
+          </div>
+        </div>
+        <div class="timer-buttons ">
+          <button class="btn btn--green  ">Start pomodora</button>
+        </div>
+      </section>
+    </div>
+    <!--START-->
+    <div class="start none">
+      <section class="timer container">
+        <div class="timer-wrapper container">
+          <h2 class="timer-wrapper__title title title--main">
+            1.Create a New Design
+          </h2>
+          <p class="timer-wrapper__subtitle">
+            Lorem ipsum dolor sit amet consectetur adipiscing
+          </p>
+          <ul class="complexity complexity--timer">
+            <li class="complexity__item complexity__item complexity__item--done_active">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+            <li class="complexity__item complexity__item--done">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+            <li class="complexity__item complexity__item--done">
+              <img src="/images/empty-tomato.svg" class="complexity__icon" alt="tomato">
+            </li>
+          </ul>
+          <!--START-->
+          <div class="indication ">
+            <div class="indication-timer">
+              <span class="indication-timer__title indication-timer__title--start">Let’s do it!</span>
+            </div>
+          </div>
+        </div>
+        <div class="timer-buttons ">
+          <button class="btn btn--green btn--green_big">Start</button>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script src="/bundle.js"></script>
+</body>
+
+</html>

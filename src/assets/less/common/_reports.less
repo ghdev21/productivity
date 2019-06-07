@@ -1,0 +1,39 @@
+.reports{
+  &__tabs{
+    margin-top: 35px;
+    text-align: center;
+  }
+  &__graphic{
+    margin-top: 135px;
+    text-align: center;
+  }
+}
+
+.tab-reports{
+  justify-content: center;
+}
+
+.legend-list{
+  display: flex;
+  margin: 48px 0 81px;
+  justify-content: center;
+  .set-font(Roboto, bold, 11px, @nepal);
+  &__item{
+    position: relative;
+    margin-right: 15px;
+    padding-left: 14px;
+    &:before{
+      position: absolute;
+      content: '';
+      top: 2px;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      background-color: @nepal;
+    }
+    .color-statistic(urgent);
+    .color-statistic(hight);
+    .color-statistic(middle);
+    .color-statistic(low);
+  }
+}

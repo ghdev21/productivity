@@ -1,0 +1,92 @@
+<section class="settings">
+  <div class="settings-wrapper container">
+    <h2 class="settings-wrapper__title title title--main">
+      Settings
+    </h2>
+
+    <div class="pomodoros pomodoros--wrapper  ">
+      <h3 class="pomodoros__title title title--subtitle">
+        Pomodoros settings
+      </h3>
+
+      <div class="pomodoros--wrapper__item settings-group ">
+        <ul class="settings-group__list tab-list">
+          <li class="tab-list__item tab-list__item--active">Pomodoros</li>
+          <li class="tab-list__item" id="category">Categories</li>
+        </ul>
+
+        <form action="#" method="post" class="settings-group__form pomodoros-form pomodoros-form--active" id="settings">
+
+          <div class="pomodoros-form__group">
+            <!--<span class="pomodoros-form__category pomodoros-work"></span>-->
+            <span class="pomodoros-form__text pomodoros-form__text--work">work time</span>
+            <label class="pomodoros-form__label controls" for="time" data-category="work">
+              <button class="controls__minus icon-minus"></button>
+              <input class="controls__input" type="number" id="time" name="work" min="15" max="25" value={{work.value}}
+                     disabled>
+              <button class="controls__plus icon-add"></button>
+            </label>
+            <p class="pomodoros-form__desc">
+              Please select a value between 15 and 25 <span class="pomodoros-form__desc--white">minutes</span>
+            </p>
+          </div>
+
+          <div class="pomodoros-form__group">
+            <!--<span class="pomodoros-form__category pomodoros-form__text&#45;&#45;iteration"></span>-->
+            <span class="pomodoros-form__text pomodoros-form__text--iteration">Work Iteration</span>
+            <label class="pomodoros-form__label controls" for="iteration" data-category="iteration">
+              <button class="controls__minus icon-minus"></button>
+              <input class="controls__input" type="number" id="iteration" name="iteration" min="2" max="5"
+                     value={{iteration.value}} disabled>
+              <button class="controls__plus icon-add"></button>
+            </label>
+            <p class="pomodoros-form__desc">
+              Please select a value between 2 and 5 <span class="pomodoros-form__desc--white">iteration</span>
+            </p>
+          </div>
+
+          <div class="pomodoros-form__group">
+            <!--<span class="pomodoros-form__category pomodoros-break pomodoros-break&#45;&#45;short"></span>-->
+            <span class="pomodoros-form__text pomodoros-form__text--break_short">Short Break</span>
+            <label class="pomodoros-form__label controls" for="short-break" data-category="shortBreak">
+              <button class="controls__minus icon-minus"></button>
+              <input class="controls__input" type="number" id="short-break" name="short-break" min="3" max="5"
+                     value={{shortBreak.value}} disabled>
+              <button class="controls__plus icon-add"></button>
+            </label>
+            <p class="pomodoros-form__desc">
+              Please select a value between 3 and 5 <span class="pomodoros-form__desc--white">minutes</span>
+            </p>
+          </div>
+
+          <div class="pomodoros-form__group">
+            <!--<span class="pomodoros-form__category pomodoros-break pomodoros-break&#45;&#45;long"></span>-->
+            <span class="pomodoros-form__text pomodoros-form__text--break_long">Long Break</span>
+            <label class="pomodoros-form__label controls" for="long-break" data-category="longBreak">
+              <button class="controls__minus icon-minus"></button>
+              <input class="controls__input" type="number" id="long-break" name="long-break" min="15" max="30"
+                     value={{longBreak.value}} disabled>
+              <button class="controls__plus icon-add"></button>
+            </label>
+            <p class="pomodoros-form__desc">
+              Please select a value between 15 and 30 <span class="pomodoros-form__desc--white">minutes</span>
+            </p>
+          </div>
+
+          <div class="pomodoros-form__cycle cycle">
+            <h3 class="cycle__title">
+              Your cycle
+            </h3>
+            <div class="cycle__graph graph">
+            </div>
+          </div>
+
+          <div class="pomodoros-form__buttons">
+            <button class="btn btn--blue">Go to Tasks</button>
+            <button class="btn btn--green btn--green_big">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

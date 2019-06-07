@@ -1,0 +1,115 @@
+.complexity--add {
+  display: inline-flex;
+}
+
+.icon--estimation {
+  color: @nepal;
+}
+
+.timer--title {
+  padding-top: 62px;
+  color: white;
+}
+
+.timer-wrapper {
+  text-align: center;
+
+  &__subtitle {
+    .set-font(Robot, 400, 17px);
+    margin: 28px 0 36px;
+    color: white;
+
+    .complexity {
+      margin-bottom: 56px;
+
+      &__item {
+        padding: 0 10px;
+
+        &--complete {
+          content: url(../../images/fill_tomato.svg);
+        }
+
+        &--failed {
+          content: url(../../images/tomato-failed.svg);
+        }
+
+        &:hover {
+          content: url(../../images/empty-tomato.svg);
+        }
+      }
+    }
+  }
+}
+
+.complexity__item--complete {
+  content: url(../../images/fill_tomato.svg);
+}
+
+.complexity__item--failed {
+  content: url(../../images/tomato-failed.svg);
+}
+
+.indication {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 264px;
+  height: 264px;
+  border-radius: 50%;
+  border: 5px solid @orange;
+
+  &-timer {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 50%;
+    justify-content: center;
+    border-radius: 100%;
+    .set-font(Roboto, 400, 15px);
+
+    &__title {
+      text-transform: uppercase;
+
+      &--start {
+        font-family: @sans;
+        text-transform: none;
+        font-size: 26px;
+      }
+    }
+
+    &__count {
+      font-size: 100px;
+      line-height: 1;
+    }
+
+    &__text {
+      font-size: 24px;
+    }
+  }
+}
+
+.timer-buttons {
+  text-align: center;
+  margin-top: 69px;
+}
+
+.timer-buttons {
+  .responsive(768px, { display: flex; });
+
+  .btn {
+    .responsive(768px, { width: 50%; height: 70px; font-size: 1.5rem; padding: 0 })
+  }
+
+  .responsive(768px, {
+    #start {
+    width: 100%;
+  }
+  })
+}
+
+.timer-container{
+  .responsive(768px, {
+    padding: 0;
+  })
+}
